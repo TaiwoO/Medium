@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mediumApp">
+<head>
+
+    <!-- Angular requeirement when useing the $locationProvider html5 mode-->
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Medium</title>
+</head>
+
+<body ng-view>
+
+    <!-- Angular -->
+    <script src="/angular/angular.min.js"></script>
+    <script src="/lib/angular-route.min.js"></script>
+
+    <!-- Main Application file -->
+
+    <script src="/app.js"></script>
+    <script src="/home/home.controller.js"></script>
+
+    <!-- 3rd party lib -->
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
