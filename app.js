@@ -6,7 +6,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var passport = require('passport');
 require('./app_api/models/db');
+require('./app_api/config/passport')
+
 var routesApi = require('./app_api/routes/index');
 
 var app = express();
@@ -26,6 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_client')));
 
+app.use(passport.initialize());
 app.use('/api', routesApi);
 
 // Send in the client index.html file
