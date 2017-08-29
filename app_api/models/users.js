@@ -1,9 +1,12 @@
 var mongoose = require('mongoose');
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken')
+var fs = require('fs');
+
+var defaultImgPath = "./img/user/avatar.png";
 
 var userSchema = new mongoose.Schema({
-    userName: {
+    username: {
         type: String,
         unique: true,
         required: true
@@ -12,6 +15,10 @@ var userSchema = new mongoose.Schema({
         type: String,
         unique: true,
         required: true
+    },
+    img: {
+        type: Buffer,
+        default: fs.readFileSync(defaultImgPath)
     },
     posts: [{
         type: mongoose.Schema.ObjectId,
@@ -39,11 +46,10 @@ userSchema.methods.validPassword = function(password) {
 userSchema.methods.generateJwt = function() {
     var expiry = new Date();
     expiry.setDate(expiry.getDate() + 7);
-
+    
     return jwt.sign({
         _id: this._id,
-        userName: this.userName,
-        posts: this.posts,
+        username: this.username,
         email: this.email,
         exp: parseInt(expiry.getTime() / 1000)
     }, process.env.JWT_SECRET);

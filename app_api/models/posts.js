@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
-var fs = require('fs');
 
-var defaultImgPath = "./img/user/avatar.png";
 
 var postSchema = new mongoose.Schema({
     author: {
@@ -25,11 +23,6 @@ var postSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    img: {
-        binary: Buffer,
-        default: fs.readFileSync(defaultImgPath)
-    },
-
     user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User'

@@ -53,5 +53,5 @@ process.on('SIGTERM', function() {
 
 // Add in schemas
 
-require('./users')
 require('./posts')
+require('./users')
