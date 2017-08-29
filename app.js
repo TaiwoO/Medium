@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-// var routesApi = require('./app_api/routes/index')
+var routesApi = require('./app_api/routes/index');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,10 +20,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// Static content to be delivered to the browser
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_client')));
 
-// app.use('/api', routesApi);
+app.use('/api', routesApi);
+
+// Send in the client index.html file
+// Note: error handling is done on the client side. (hence no call to next)
+app.use(function(req, res, next){
+  res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
+  // next();
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -31,7 +39,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -43,5 +50,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;

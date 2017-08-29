@@ -10,6 +10,16 @@
                 controller: 'homeCtrl',
                 controllerAs: 'vm'
             })
+            .when('/login', {
+                templateUrl: '/auth/login/login.view.html',
+                controller: 'loginCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/register', {
+                templateUrl: '/auth/register/register.view.html',
+                controller: 'registerCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -19,6 +29,6 @@
 
     angular
         .module('mediumApp')
-        .config(['$routeProvider', '$locationProvider', config])
+        .config(['$routeProvider', '$locationProvider', config]);
 
 })();

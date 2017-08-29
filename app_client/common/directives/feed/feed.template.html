@@ -1,0 +1,29 @@
+
+<div class="feed-wrapper">
+
+    <div class="feed-meta">
+        <div class="left"><a href="#">
+            <a href="#">
+            <img src="{{content.img}}" class="img-responsive" alt="">
+            </a>
+        </div>
+        <div class="middle">
+            <a href="#" >
+                <p class="meta-title">{{content.author}}</p>
+            </a>
+            <p class="meta-date">{{content.date}}</p>
+        </div>
+        <div class="right">
+            <like-hearts likes="content.likes" class="rating"></like-hearts>
+        </div>
+    </div>
+
+    <div class="feed-post">
+        <h3 class="title">{{content.title}}</h3>
+        <p class="body">{{content.body}}</p>
+
+        <a href="#" >Read More</a>
+    </div>
+
+
+</div>

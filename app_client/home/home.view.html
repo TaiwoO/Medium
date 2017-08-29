@@ -1,1 +1,39 @@
-<p> {{vm.message}}</p>
+
+<navigation></navigation>
+
+
+<div id="home">
+
+    <!--Banner-->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Medium-Clone</h1>
+            <p>Read, Write and share your stories</p>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="row">
+
+            <!--For the feed section-->
+            <div class="col-md-9">
+                <h4 class="header">Global Feed</h4>
+                <div ng-repeat="post in vm.posts">
+                    <hr>
+                    <feed content="post"> </feed>
+                </div>
+            </div>
+
+            <!--For the tab section-->
+            <div class="col-md-3 tags-wrapper">
+                <h4> Popular tags</h4>
+                <div ng-repeat="tag in vm.tags">
+                    <a href=""><span class="badge"> {{tag}}</span></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</div>
