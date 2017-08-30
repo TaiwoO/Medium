@@ -55,7 +55,7 @@ module.exports.register = function (req, res) {
             return;
         }
         if (user) {
-            if (newUser.username === user.username ) {
+            if (newUser.username === user.username) {
                 sendJSONresponse(res, 409, {
                     message: "username already exists"
                 });
