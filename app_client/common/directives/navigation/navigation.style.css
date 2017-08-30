@@ -3,3 +3,9 @@ navigation .navbar-brand{
     color: #5CB85C !important;
     font-weight: bold;
 }
+
+navigation .profile-pic {
+    width: 25px;
+    height: 25px;
+
+}

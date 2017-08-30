@@ -56,6 +56,7 @@
             if (isLoggedIn()) {
                 payload = JSON.parse($window.atob(token.split('.')[1]));
                 return {
+                    id: payload._id,
                     username: payload.username,
                     posts: payload.posts,
                     email: payload.email,

@@ -11,7 +11,9 @@
 
             <ul ng-if="navvm.isLoggedIn == true" class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello {{navvm.currentUser.username}}<span class="caret"></span></a>
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img ng-src="{{navvm.currentUser.imgUrl}}" class="profile-pic" alt="">&nbsp&nbsp&nbsp{{navvm.currentUser.username}}<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a ng-click="navvm.logout()" href="#">Logout</a></li>
                     </ul>
