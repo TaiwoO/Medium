@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken')
 var fs = require('fs');
 
 var defaultImgPath = "./img/user/avatar.png";
 
-var userSchema = new mongoose.Schema({
+var userSchema = new Schema({
     username: {
         type: String,
         unique: true,
@@ -21,11 +22,11 @@ var userSchema = new mongoose.Schema({
         default: fs.readFileSync(defaultImgPath)
     },
     posts: [{
-        type: mongoose.Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Post'
     }],
     favPosts: [{
-        type: mongoose.Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Post'
     }],
 

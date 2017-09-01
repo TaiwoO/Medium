@@ -11,17 +11,23 @@ var sendJSONresponse = function (res, status, content) {
 // Saves user to the database
 var doRegisterUser = function (res, res, user) {
 
-    user.save(function (err) {
-        var token;
-        if (err) {
-            sendJSONresponse(res, 404, err);
-        } else {
-            token = user.generateJwt();
-            sendJSONresponse(res, 200, {
-                token: token
-            });
-        }
-    });
+    if (!user) {
+        sendJsonResponse(res, 404, {
+            message: "No user provided"
+        });
+    } else {
+        user.save(function (err) {
+            var token;
+            if (err) {
+                sendJSONresponse(res, 404, err);
+            } else {
+                token = user.generateJwt();
+                sendJSONresponse(res, 200, {
+                    token: token
+                });
+            }
+        });
+    }
 }
 
 module.exports.register = function (req, res) {

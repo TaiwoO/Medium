@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 
-var postSchema = new mongoose.Schema({
+var postSchema = new Schema({
     author: {
         type: String,
         required: true
     },
     date: {
         type: Date,
-        required: true,
         default: Date.now
     },
     title: {
@@ -24,7 +24,7 @@ var postSchema = new mongoose.Schema({
         default: 0
     },
     user: {
-        type: mongoose.Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
     }
 
