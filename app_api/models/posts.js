@@ -15,6 +15,9 @@ var postSchema = new Schema({
         type: String,
         required: true
     },
+    subTitle: {
+        type: String,
+    },
     body: {
         type: String,
         required: true
