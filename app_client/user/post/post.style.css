@@ -1,0 +1,17 @@
+
+#post {
+    margin-top: 70px;
+    text-align: center;
+}
+
+#post .post-form {
+    width: 500px;
+    /* display: block; */
+    margin: 0 auto;
+    padding: 4px;
+}
+
+#post a {
+    text-decoration: none;
+    color: #5CB85C;
+}

@@ -20,6 +20,11 @@
                 controller: 'registerCtrl',
                 controllerAs: 'vm'
             })
+            .when('/newpost', {
+                templateUrl:'/user/post/post.view.html',
+                controller: 'postCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({
                 redirectTo: '/'
             });

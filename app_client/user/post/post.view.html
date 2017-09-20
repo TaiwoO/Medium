@@ -1,0 +1,32 @@
+<navigation>
+</navigation>
+
+
+
+<div id="post">
+    <div class="post-form container">
+
+        <form ng-submit="vm.onSubmit()" class="login-form">
+            <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+
+            <div class="form-group">
+                <input ng-model="vm.formData.title" type="" class="form-control" id="title" placeholder="Post title">
+            </div>
+
+            <div class="form-group">
+                <input ng-model="vm.formData.subtitle" type="" class="form-control" id="subtitle" placeholder="What is this post about?">
+            </div>
+
+            <div class="form-group">
+                <textarea ng-model="vm.formData.body" class="form-control" rows="10" id="comment" placeholder="Enter your post here"></textarea>
+            </div>
+
+            <div class="form-group">
+                <input ng-model="vm.formData.tags" type="" class="form-control" id="tags" placeholder="Enter tags">
+            </div>
+
+            <input class="btn btn-lg btn-success" type="submit" value="Publish Post" />
+        </form>
+
+    </div>
+</div>

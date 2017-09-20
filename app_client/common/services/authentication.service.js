@@ -69,8 +69,8 @@
             logout: logout,
             register: register,
             isLoggedIn: isLoggedIn,
-            currentUser: currentUser
-            // getToken: getToken
+            currentUser: currentUser,
+            getToken: getToken
         };
     }
 

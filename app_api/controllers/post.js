@@ -12,7 +12,7 @@ var getUserFromPayload = function (req, res) {
 
     return new Promise(function (resolve, reject) {
 
-        if (!req.payload && !req.payload.username) {
+        if (!req.payload || !req.payload.username) {
             reject(new Error('No username in payload'));
         } else {
             User
@@ -46,6 +46,7 @@ var doCreatePost = function (req, res, user) {
         newPost.author = user.username;
         newPost.title = req.body.title;
         newPost.body = req.body.body;
+        newPost.subTitle = req.body.subTitle;
         newPost.user = user._id;
 
         newPost.save(function (err, post) {

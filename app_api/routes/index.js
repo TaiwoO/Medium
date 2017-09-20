@@ -15,7 +15,7 @@ router.post('/login', ctrlAuth.login);
 router.post('/register', ctrlAuth.register);
 
 // For posts
-router.post('/user/:userid/post',authMiddleware,ctrlPost.createPost); // added the auth middle-ware to the route
+router.post('/post',authMiddleware,ctrlPost.createPost); // added the auth middle-ware to the route
 
 // For User
 router.get('/user/:userid/profileImg', ctrlUser.profilePic);
